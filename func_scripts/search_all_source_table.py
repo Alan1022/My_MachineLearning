@@ -27,6 +27,7 @@ with open (hql_file,"r") as f:
         if m2:
             table2=m2.group(1)+"."+m2.group(2)
             source_tables = source_tables + "," + table2
+    #切分成list
     list_tables = source_tables.split(",")
     #去重
     list_tables = list(set(list_tables))
@@ -34,7 +35,7 @@ with open (hql_file,"r") as f:
     for table in list_tables:
         if table !="":
             dependency_tables = table + "," + dependency_tables
-            dependency_tables = dependency_tables.rstrip(",")  #删除最右边的逗号
+    dependency_tables = dependency_tables.rstrip(",")  #删除最右边的逗号
     print (dependency_tables)
 
 

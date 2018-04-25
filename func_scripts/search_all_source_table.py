@@ -31,7 +31,7 @@ with open (hql_file,"r") as f:
     list_tables = source_tables.split(",")
     #去重
     list_tables = list(set(list_tables))
-    print "所有依赖表如下："
+    print "统计依赖表如下："
     for table in list_tables:
         if table !="":
             dependency_tables = table + "," + dependency_tables
